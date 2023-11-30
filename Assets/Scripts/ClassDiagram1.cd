@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="AdicionarBlocos">
+    <Position X="15.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAAAAAQAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AdicionarBlocos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="BlockTypes">
-    <Position X="2.25" Y="1.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Nested Types" Collapsed="false" />
-    </Compartments>
+    <Position X="14.75" Y="15.25" Width="2.25" />
     <NestedTypes>
       <Enum Name="BlockTypes.BlockType" Collapsed="true">
         <TypeIdentifier>
@@ -12,13 +16,22 @@
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="7.441" />
+        <Point X="3.75" Y="8.151" />
+        <Point X="14.68" Y="8.151" />
+        <Point X="14.68" Y="17.116" />
+        <Point X="14.75" Y="17.116" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>IABAAAAAAAEABAAACAGAAAAAAAAEAAACAAAAAAAQCAA=</HashCode>
+      <HashCode>IABAAEAEACGABAAACAGAAAAAAAAEAAACAAAAAABQCAA=</HashCode>
       <FileName>Assets\Scripts\BlockTypes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Blocos">
-    <Position X="4" Y="1.5" Width="2.25" />
+    <Position X="2" Y="10.5" Width="4.25" />
     <NestedTypes>
       <Delegate Name="Blocos.DelegadoArrastarTerminado" Collapsed="true">
         <TypeIdentifier>
@@ -30,47 +43,106 @@
           <NewMemberFileName>Assets\Scripts\Blocos.cs</NewMemberFileName>
         </TypeIdentifier>
       </Delegate>
-      <Delegate Name="Blocos.BlocosAdicionados" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Assets\Scripts\Blocos.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AESIAEgQBCCyAAQgARRAAABYAAAAEKRYoABBACACJIA=</HashCode>
+      <HashCode>AESIoEgQBCCiEAQgARRAAABYAAAAEKRYoABBACACJIA=</HashCode>
       <FileName>Assets\Scripts\Blocos.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GerenciarPaginas">
-    <Position X="6.5" Y="1.5" Width="1.75" />
+  <Class Name="ExecutarPrograma">
+    <Position X="15.75" Y="6" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAEAIAAAAAQAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\GerenciarPaginas.cs</FileName>
+      <HashCode>AAAAgCAAACAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ExecutarPrograma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileBrowserUpdate">
+    <Position X="25.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\FileBrowserUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gerenciamento">
+    <Position X="15.75" Y="2.75" Width="2.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="6.75" />
+        <Point X="3.75" Y="4" />
+        <Point X="15.75" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAYAAACAAAEAIIAAAAQAAAAAEAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gerenciamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GerenciarLoja">
+    <Position X="22.5" Y="10.75" Width="3.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="7.441" />
+        <Point X="3.75" Y="8.151" />
+        <Point X="24.25" Y="8.151" />
+        <Point X="24.25" Y="10.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAAIAAAACAABCAAAAAAAAAAAAAAAAAAEAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GerenciarLoja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GerenciarTutorial">
+    <Position X="19" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAACAQAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GerenciarTutorial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GerenciarUsuário">
+    <Position X="15.75" Y="8.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEAiAAAAAAgAAAAAAAAAIAAAAgCQgAEAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GerenciarUsuário.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemLoja">
+    <Position X="22.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AASACAAAACCAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ItemLoja.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MenuAtividade">
-    <Position X="6.5" Y="3.75" Width="1.75" />
+    <Position X="29" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAEAAQAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\MenuAtividade.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OpenMenu">
-    <Position X="6.5" Y="6" Width="1.75" />
+    <Position X="19.75" Y="10.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAACABAACAAAAAAABAAAAACAAAAAAACAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAACABAACAAAAAAABAAAAACAAAAAAACACAAAAAAEAA=</HashCode>
       <FileName>Assets\Scripts\OpenMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PanAndZoom">
-    <Position X="8.5" Y="1.5" Width="2.25" />
+    <Position X="23.75" Y="3.5" Width="10.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="6.75" />
+        <Point X="3.75" Y="5.875" />
+        <Point X="23.75" Y="5.875" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAQAACAEACAAAAAAAAEEAAAEQAIAAkAIAAAAAAABAAA=</HashCode>
       <FileName>Assets\Scripts\PanAndZoom.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerPrefsEditor">
-    <Position X="8.5" Y="5.75" Width="2.25" />
+    <Position X="22.25" Y="15.5" Width="1.75" />
     <NestedTypes>
       <Enum Name="PlayerPrefsEditor.FieldType" Collapsed="true">
         <TypeIdentifier>
@@ -84,18 +156,46 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SnapPoint">
-    <Position X="2.25" Y="7.25" Width="1.5" />
+    <Position X="26.5" Y="11" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\SnapPoint.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="BlockType">
-    <Position X="2.25" Y="6" Width="1.5" />
+  <Class Name="VerEstatistica">
+    <Position X="29.25" Y="11" Width="1.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="7.441" />
+        <Point X="3.75" Y="8.151" />
+        <Point X="30.062" Y="8.151" />
+        <Point X="30.062" Y="11" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAgACAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\BlockTypes.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VerEstatistica.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
+  <Class Name="VerificarPontuação">
+    <Position X="15.25" Y="12" Width="2.25" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="7.441" />
+        <Point X="3.75" Y="8.151" />
+        <Point X="14.68" Y="8.151" />
+        <Point X="14.68" Y="13.515" />
+        <Point X="15.25" Y="13.515" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAgAAAAAAAAAABAAAAAAIAAAAAAAJAEAAA=</HashCode>
+      <FileName>Assets\Scripts\VerificarPontuação.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="3" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

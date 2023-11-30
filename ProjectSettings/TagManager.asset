@@ -9,6 +9,8 @@ TagManager:
   - Blocks
   - delete
   - Event
+  - username
+  - SnapCondition
   layers:
   - Default
   - TransparentFX

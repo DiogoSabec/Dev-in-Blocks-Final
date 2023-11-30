@@ -8,7 +8,7 @@ using System.Linq;
 
 public class GerenciarLoja : MonoBehaviour
 {
-    public int[,] itensLoja = new int[5, 5];
+    public int[,] itensLoja = new int[6, 6];
     private int moedas;
     public TMP_Text txt_Moeda;
 
@@ -22,15 +22,17 @@ public class GerenciarLoja : MonoBehaviour
 
         //ids
         itensLoja[1, 1] = 1;
-        itensLoja[1, 2] = 1;
-        itensLoja[1, 3] = 0;
-        itensLoja[1, 4] = 1;
+        itensLoja[1, 2] = 2;
+        itensLoja[1, 3] = 3;
+        itensLoja[1, 4] = 4;
+        itensLoja[1, 5] = 5;
 
         //preço
         itensLoja[2, 1] = 10;
         itensLoja[2, 2] = 20;
         itensLoja[2, 3] = 30;
         itensLoja[2, 4] = 40;
+        itensLoja[2, 5] = 50;
 
         // Recuperar itens comprados do PlayerPrefs
         string itensCompradosString = PlayerPrefs.GetString("ItensComprados");

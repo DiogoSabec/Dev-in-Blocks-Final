@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4795900d3ac3db429906587e11cb9ec, type: 3}
+  m_Sprite: {fileID: 2015472314767161344, guid: 7f6506451303da3478ef419677b812a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3212566778811350835}
   - component: {fileID: 4574649736447314889}
   m_Layer: 0
-  m_Name: Print
+  m_Name: Else
   m_TagString: Blocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a345c6702d499843a540e613484b3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  condicao: 0
   estaEncaixado: 0
   pontosEncaixe: []
   pontosCondicao: []
@@ -365,8 +366,11 @@ MonoBehaviour:
   st_top: print(
   st_cond: 
   st_mid: 
-  st_bot: );
-  inputField: {fileID: 0}
+  st_bot: ');
+
+'
+  inputs: []
+  dropdowns: []
 --- !u!1 &7979214901830282760
 GameObject:
   m_ObjectHideFlags: 0

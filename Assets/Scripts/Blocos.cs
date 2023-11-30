@@ -17,6 +17,7 @@ public class Blocos : MonoBehaviour
 
     private bool estaArrastando = false;
     private bool ehMenu;
+    public bool condicao;
 
     private Vector3 mousePosicaoInicialArraste;
     private Vector3 spritePosicaoInicialArraste;
@@ -26,6 +27,7 @@ public class Blocos : MonoBehaviour
     private double tempoPressionado = 0.3;
 
     public List<Transform> pontosEncaixe;
+    public List<Transform> pontosCondicao;
     public List<GameObject> todosOsBlocos;
 
     public float alcanceEncaixe = 0.5f;
@@ -90,7 +92,7 @@ public class Blocos : MonoBehaviour
 
         // Atualiza os pontos de encaixe disponíveis
         AtualizarPontosEncaixe();
-        Reposicionar(0);
+
     }
 
     private void OnMouseDrag()
@@ -106,7 +108,7 @@ public class Blocos : MonoBehaviour
 
     private void OnMouseUp()
     {
-        
+
 
         // O arraste foi concluído
         estaArrastando = false;
@@ -133,7 +135,7 @@ public class Blocos : MonoBehaviour
 
     private void OnArrasteTerminado()
     {
-        
+
 
         float distanciaMaisProxima = float.MaxValue;
         Transform novoPai = null;
@@ -158,6 +160,9 @@ public class Blocos : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+
+
+
             // Agora, vamos buscar a referência ao componente SnapPoint
             SnapPoint snapPointComponent = pontoEncaixeMaisProximo.GetComponent<SnapPoint>();
 
@@ -183,8 +188,15 @@ public class Blocos : MonoBehaviour
                 pai.AjustarAltura();
 
                 snapPointComponent.DefinirUsado(true);
-                
 
+                if (pontoEncaixeMaisProximo.CompareTag("SnapCondition") && !condicao)
+                {
+                    // Se o ponto de encaixe for um SnapCondition, não permita a conexão
+                    estaEncaixado = false;
+                    transform.SetParent(null);
+                    transform.position = new Vector3(transform.position.x + 5, transform.position.y, currentZ);
+                    Debug.LogWarning("Não é bloco de condição!");
+                } else { 
 
                 /*---------------------
                    Cria novo SnapPoint 
@@ -205,6 +217,7 @@ public class Blocos : MonoBehaviour
                 if (BlocoConectado != null)
                 {
                     BlocoConectado();
+                }
                 }
             }
         }
@@ -243,7 +256,6 @@ public class Blocos : MonoBehaviour
         Blocos blocosComponent = currentTransform.GetComponent<Blocos>();
         if (blocosComponent != null)
         {
-            blocosComponent.Reposicionar(0);
         }
 
         // Chama recursivamente a função nos pais
@@ -279,7 +291,7 @@ public class Blocos : MonoBehaviour
         GameObject[] todosObjetos = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in todosObjetos)
         {
-            if (obj.CompareTag("SnapPoint") || obj.CompareTag("delete"))
+            if (obj.CompareTag("SnapPoint") || obj.CompareTag("delete") || obj.CompareTag("SnapCondition"))
             {
                 // Adiciona o ponto de encaixe à lista
                 Transform pontoEncaixe = obj.transform;
@@ -302,11 +314,10 @@ public class Blocos : MonoBehaviour
         {
             foreach (Transform filho in snapPoint)
             {
-                if (filho.CompareTag("Blocks"))
+                if (filho.CompareTag("Blocks") && !filho.parent.CompareTag("SnapCondition")) // Adicione a condição para ignorar blocos com a tag "SnapCondition"
                 {
                     filhosBloco.Add(filho.gameObject);
                 }
-
             }
 
             if (snapPoint.CompareTag("SnapPoint"))
@@ -318,6 +329,7 @@ public class Blocos : MonoBehaviour
         // Chama o método de ajustar a altura se a lista de filhos do bloco for atualizada
         AjustarAltura();
     }
+
 
     private float ObterAlturaAtual(GameObject objeto)
     {
@@ -401,8 +413,11 @@ public class Blocos : MonoBehaviour
                 // Move o objeto "Inferior"
                 if (objetoInferior != null)
                 {
+                    int indiceInferior = containerSprites.Find("Bot").GetSiblingIndex() - 1;
+                    float deslocamentoY = -altura - indiceInferior;
+
                     Vector3 novaPosicaoInferior = objetoInferior.transform.localPosition;
-                    novaPosicaoInferior.y = -altura - 1;
+                    novaPosicaoInferior.y = deslocamentoY;
                     objetoInferior.transform.localPosition = novaPosicaoInferior;
                 }
 
@@ -428,6 +443,7 @@ public class Blocos : MonoBehaviour
 
 
     }
+
 
     public void Reposicionar(int recursionCount)
     {
@@ -498,3 +514,4 @@ public class Blocos : MonoBehaviour
         }
     }
 }
+
