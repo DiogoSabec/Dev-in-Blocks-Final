@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+using UnityEditor; // Add this line to include the UnityEditor namespace
 
 public class PlayerPrefsEditor : EditorWindow
 {
@@ -9,11 +9,9 @@ public class PlayerPrefsEditor : EditorWindow
     [MenuItem("Edit/Player Prefs")]
     public static void openWindow()
     {
-
         PlayerPrefsEditor window = (PlayerPrefsEditor)EditorWindow.GetWindow(typeof(PlayerPrefsEditor));
         window.titleContent = new GUIContent("Player Prefs");
         window.Show();
-
     }
 
     public enum FieldType { String, Integer, Float }

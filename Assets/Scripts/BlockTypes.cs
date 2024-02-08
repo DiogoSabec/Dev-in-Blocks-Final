@@ -26,6 +26,7 @@ public class BlockTypes : MonoBehaviour
         USER_INPUT,
         WHILE,
         CONDITION,
+        MATH,
 
     }
 
@@ -64,6 +65,9 @@ public class BlockTypes : MonoBehaviour
             case BlockType.CONDITION:
                 ExecuteCondition();
                 break;
+            case BlockType.MATH:
+                ExecuteMath();
+                break;
                 // Add more cases for other block types
         }
     }
@@ -76,22 +80,30 @@ public class BlockTypes : MonoBehaviour
         this.st_cond = "";
     }
 
+    private void ExecuteMath()
+    {
+        this.st_top = this.inputs[0].text + " " + this.dropdowns[0].options[dropdowns[0].value].text + " " + this.inputs[1].text + " " + this.dropdowns[1].options[dropdowns[1].value].text + " " + this.inputs[2].text + ";\n";
+        this.st_mid = "";
+        this.st_bot = "";
+        this.st_cond = "";
+    }
+
     private void ExecuteWhile()
     {
 
         this.st_top = "while(";
-        this.st_cond = BuscarCondicao() + ") {";
+        this.st_cond = BuscarCondicao() + ") {\n";
         this.st_mid = BuscarMeio();
-        this.st_bot = "}";
+        this.st_bot = "\n}";
     }
 
     private void ExecuteIfBlock()
     {
 
         this.st_top = "if(";
-        this.st_cond = BuscarCondicao() + ") {";
+        this.st_cond = BuscarCondicao() + ") {\n";
         this.st_mid = BuscarMeio();
-        this.st_bot = "}";
+        this.st_bot = "\n}";
     }
 
 
@@ -99,7 +111,7 @@ public class BlockTypes : MonoBehaviour
     private void ExecutePrintBlock()
     {
         this.st_top = "print(";
-        this.st_bot = ");";
+        this.st_bot = ");\n";
         this.st_mid = BuscarMeio();
         this.st_cond = "";
     }

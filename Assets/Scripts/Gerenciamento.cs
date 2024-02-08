@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Gerenciamento : MonoBehaviour
 {
-    public int dinheiro = 0;
+    private int dinheiro = 0;
 
     public TMP_Text txtDinheiro;
 
@@ -19,7 +19,7 @@ public class Gerenciamento : MonoBehaviour
             SceneManager.LoadScene("Tutorial");
             PlayerPrefs.SetInt("TutorialCompleto", 1);
             PlayerPrefs.SetInt("Item1", 1);
-            PlayerPrefs.SetInt("Item2", 2);
+            PlayerPrefs.SetInt("Item2", 1);
 
         }
 
